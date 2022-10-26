@@ -1,4 +1,4 @@
-# Exploring Factors Affecting Life Expectancies By State and Gender ~Dataset Project~
+# Exploring Factors Affecting Life Expectancies By State and Gender *Dataset Project*
 
 ## Introduction
 ### What is your general motivation for this topic? Provide some context that explains why the topic is interesting or important to you.
