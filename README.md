@@ -33,6 +33,14 @@ This is the link I used to assign states to either the BlueStates dataset or the
 
 ### What did the data show? What are your takeaways? Plots might be helpful (though not required) depending on your question. Make sure to also discuss the limitations of your research.
 
+
+
 ### What are some related or additional questions that you would explore if you had more time and resources?
 
+If I had more time and resources I would explore the differences in male and female results and probably also go into more depth by state (i.e. adding a dataset for swing states (ones that often switch between republican and democrat majorities))
+
+If I removed swing states from the data, would the results be more drastic? 
+At what point is the difference in life expectancies by party status correlation?
+
+I would also like to know how my data for income quartile changes if I weight the states based on population size (obviously California is going to have more weight than Kansas because it has many more people in the state)
 
