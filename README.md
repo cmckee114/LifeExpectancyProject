@@ -17,10 +17,13 @@ This topic interests me because since I was 6 I have been volunteering for a she
 
 ### *Dataset -->* Describe what you know about how the data was generated. If possible, include information about who owns the dataset and why you are able to use it 
 
-This dataset was created by Raj Chetty, Michael Stepner, Sarah Abraham and their other partners at JAMA Network republished by The Health Inequality Project. I have permission to use the dataset owner's dataset with the request that I cite their 2016 JAMA paper which they linked on The Health Inequality Project's website and has been viewed over 200,000 times and cited over 1,000 times. To get the dataset from its source visit this link [Health Inequality Project](https://healthinequality.org/data/). I used the third data file labeled "Satte life expectancy estimates". 
+This dataset was created by Raj Chetty, Michael Stepner, Sarah Abraham and their other partners at JAMA Network republished by The Health Inequality Project. I have permission to use the dataset owner's dataset with the request that I cite their 2016 JAMA paper which they linked on The Health Inequality Project's website and has been viewed over 200,000 times and cited over 1,000 times. To get the dataset from its source visit this link [Health Inequality Project](https://healthinequality.org/data/). I used the third data file labeled "Satte life expectancy estimates" and edited it slightly just by deleting the first column of the data because I found it to be unneccessary and distracting from the data itself. 
 
 
 ### *Process -->* How did you go about answering your questions? What specific pieces of information did you need from your data set and how did you combine data to arrive at your answer?
+
+This is the link I used to assign states to either the BlueStates dataset or the RedStates dataset which you can edit because I've linked them above! Feel free to change the party affiliation for states and rerun my program to see how the life expectancies change!
+[Which States Fall Under Which Party](https://www.governing.com/now/maps-whats-the-real-red-and-blue-balance-of-state-government)
 
 ### *Challenges -->* What difficulties did you run into, and how did you approach solving them?
 
