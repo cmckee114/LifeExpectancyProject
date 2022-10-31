@@ -6,12 +6,14 @@ import java.util.io;
 
 public class LifeExpectancyProject{
     public static void main (String[] args) throws FileNotFoundException{
-        String pathnameBlue = "/Users/cmckee/Desktop/Seminar/Unit1/LifeExpectancyProject/Unit1/LifeExpectancyProject/LifeExpectancyProject.csv";
-        String pathnameRed = "/Users/cmckee/Desktop/Seminar/Unit1/LifeExpectancyProject/Unit1/LifeExpectancyProject/RedStates.csv";
-        String lifeExpectancyPathname = "/Users/cmckee/Desktop/Seminar/Unit1/LifeExpectancyProject/Unit1/LifeExpectancyProject/BlueStates.csv";
-        
+        String pathnameBlue = "/Users/cmckee/Desktop/Seminar/Unit1/LifeExpectancyProject/LifeExpectancyProject.csv";
+        String pathnameRed = "/Users/cmckee/Desktop/Seminar/Unit1/LifeExpectancyProject/RedStates.csv";
+        String lifeExpectancyPathname = "/Users/cmckee/Desktop/Seminar/Unit1/LifeExpectancyProject/BlueStates.csv";
+        String babyDataPathname = "/Users/cmckee/Desktop/Seminar/Unit1/LifeExpectancyProject/BabyData.csv";
+
         //running the functions to get the answers to my two questions 
         System.out.println(returnWinningParty(pathnameBlue, pathnameRed));
+        System.out.println(incomeQuartileDifference(babyDataPathname));
         System.out.println(incomeQuartileDifference(lifeExpectancyPathname));
     
     }
