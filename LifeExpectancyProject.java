@@ -11,9 +11,13 @@ public class LifeExpectancyProject{
         String lifeExpectancyPathname = "/Users/cmckee/Desktop/Seminar/Unit1/LifeExpectancyProject/LifeExpectancyData.csv";
         String babyDataPathname = "/Users/cmckee/Desktop/Seminar/Unit1/LifeExpectancyProject/BabyData.csv";
 
-
+        double[] maxTester1 = {7.2,3.0,1.6,4.5};
+        double[] maxTester2 = {2.1,3.4,6.8,3.2};
+        
+        System.out.println(max(maxTester1));
+        System.out.println(max(maxTester2));
         //running the functions to get the answers to my two questions 
-        returnWinningParty(lifeExpectancyPathname, pathnameBlue, pathnameRed);
+        //returnWinningParty(lifeExpectancyPathname, pathnameBlue, pathnameRed);
         // System.out.println(incomeQuartileDifference(babyDataPathname));
         // System.out.println(incomeQuartileDifference(lifeExpectancyPathname));
     }
@@ -102,83 +106,93 @@ public class LifeExpectancyProject{
 //     }
 
 //Assuming all states are either in the redstates data file or the bluestates data file 
-    public static void returnWinningParty (String lifeExpectancyPathname, String pathnameBlue, String pathnameRed) throws FileNotFoundException{
-        File blueStatesFile = new File(pathnameBlue);
-        File redStatesFile = new File(pathnameRed);
-        File allStatesFile = new File(lifeExpectancyPathname);
+    // public static void returnWinningParty (String lifeExpectancyPathname, String pathnameBlue, String pathnameRed) throws FileNotFoundException{
+    //     File blueStatesFile = new File(pathnameBlue);
+    //     File redStatesFile = new File(pathnameRed);
+    //     File allStatesFile = new File(lifeExpectancyPathname);
 
-        Scanner sc = new Scanner(allStatesFile);
+    //     Scanner sc = new Scanner(allStatesFile);
         
-        ArrayList<Double> blueStatesExpectancy = new ArrayList<Double>();
-        ArrayList<Double> redStatesExpectancy = new ArrayList<Double>();
+    //     ArrayList<Double> blueStatesExpectancy = new ArrayList<Double>();
+    //     ArrayList<Double> redStatesExpectancy = new ArrayList<Double>();
 
-        String[] headerArr = sc.nextLine().split(",");
-        ArrayList<String> header = new ArrayList<>(Arrays.asList(headerArr));
+    //     String[] headerArr = sc.nextLine().split(",");
+    //     ArrayList<String> header = new ArrayList<>(Arrays.asList(headerArr));
         
-        int stateNameIndex = header.indexOf("statename");
-        int q1MIndex = header.indexOf("le_agg_q1_M");
-        int q1FIndex = header.indexOf("le_agg_q1_F");
-        int q2MIndex = header.indexOf("le_agg_q2_M");
-        int q2FIndex = header.indexOf("le_agg_q2_F");
-        int q3MIndex = header.indexOf("le_agg_q3_M");
-        int q3FIndex = header.indexOf("le_agg_q3_F");
-        int q4MIndex = header.indexOf("le_agg_q4_M");
-        int q4FIndex = header.indexOf("le_agg_q4_F");
+    //     int stateNameIndex = header.indexOf("statename");
+    //     int q1MIndex = header.indexOf("le_agg_q1_M");
+    //     int q1FIndex = header.indexOf("le_agg_q1_F");
+    //     int q2MIndex = header.indexOf("le_agg_q2_M");
+    //     int q2FIndex = header.indexOf("le_agg_q2_F");
+    //     int q3MIndex = header.indexOf("le_agg_q3_M");
+    //     int q3FIndex = header.indexOf("le_agg_q3_F");
+    //     int q4MIndex = header.indexOf("le_agg_q4_M");
+    //     int q4FIndex = header.indexOf("le_agg_q4_F");
 
-        while (sc.hasNextLine()){
-            //taking the current line and splitting it and putting it into an arraylist
-            ArrayList<String> line = new ArrayList<>(Arrays.asList(sc.nextLine().split(",")));
+    //     while (sc.hasNextLine()){
+    //         //taking the current line and splitting it and putting it into an arraylist
+    //         ArrayList<String> line = new ArrayList<>(Arrays.asList(sc.nextLine().split(",")));
             
-            //adding together all of the data so that i can then average
-            double sum= 0;
-            sum+= Double.parseDouble(line.get(q1MIndex))+ Double.parseDouble(line.get(q1FIndex))+ Double.parseDouble(line.get(q2MIndex))+ Double.parseDouble(line.get(q2FIndex))+ Double.parseDouble(line.get(q3MIndex))+ Double.parseDouble(line.get(q3FIndex))+ Double.parseDouble(line.get(q4MIndex))+ Double.parseDouble(line.get(q4FIndex));
-            //creating the average with the sum of all of the life expectancies for that state
-            double average = sum/8;
+    //         //adding together all of the data so that i can then average
+    //         double sum= 0;
+    //         sum+= Double.parseDouble(line.get(q1MIndex))+ Double.parseDouble(line.get(q1FIndex))+ Double.parseDouble(line.get(q2MIndex))+ Double.parseDouble(line.get(q2FIndex))+ Double.parseDouble(line.get(q3MIndex))+ Double.parseDouble(line.get(q3FIndex))+ Double.parseDouble(line.get(q4MIndex))+ Double.parseDouble(line.get(q4FIndex));
+    //         //creating the average with the sum of all of the life expectancies for that state
+    //         double average = sum/8;
 
-            if (isDem(line.get(stateNameIndex), blueStatesFile)==true){
-                blueStatesExpectancy.add(average);
+    //         if (isDem(line.get(stateNameIndex), blueStatesFile)==true){
+    //             blueStatesExpectancy.add(average);
+    //         }
+    //         else{
+    //             redStatesExpectancy.add(average);
+    //         }
+    //         //depending on whether or not this state is republican or democrat add the average onto the list blueStatesExpectancy or redStatesExpectancy
+    //     }
+
+    //     //average all of the values in the blueLifeExpectancy arraylist
+    //     double sumBlue = 0;
+    //     for (int i =0; i<blueStatesExpectancy.size(); i++){
+    //         sumBlue += blueStatesExpectancy.get(i);
+    //     }
+    //     double blueAverage = sumBlue/blueStatesExpectancy.size();
+
+    //     //average all of the values in the redLifeExpectancy arraylist
+    //     double sumRed = 0;
+    //     for (int i =0; i<blueStatesExpectancy.size(); i++){
+    //         sumRed += redStatesExpectancy.get(i);
+    //     }
+    //     double redAverage = sumRed/redStatesExpectancy.size();
+
+    //     System.out.println("The average life expectancy for the republican states is " + redAverage);
+    //     System.out.println("The average life expectancy for the democratic states is " + blueAverage);
+
+    // }
+
+    // public static boolean isDem (String state, File blueStatesFile) throws FileNotFoundException{
+    //     //reading through the blue states file 
+    //     Scanner blueSC = new Scanner(blueStatesFile);
+    //     blueSC.nextLine();
+    //     ArrayList<String> blueStates= new ArrayList<>();
+    //     while (blueSC.hasNextLine()){
+    //         //adds state to the arraylist
+    //         blueStates.add(blueSC.nextLine()); //IS THIS RIGHT 
+    //     }
+    //     //is the state is in the list of states thats democrat return true
+    //     if (blueStates.contains(state)){
+    //         return true;
+    //     }
+    //     //if its not return false 
+    //     else{
+    //         return false;
+    //     }
+    // }
+
+    public static double max (double[] array){
+        double currMax = array[0];
+        for(int i =1; i< array.length; i++){
+            if (array[i]> currMax){
+                currMax = array[i];
             }
-            else{
-                redStatesExpectancy.add(average);
-            }
-            //depending on whether or not this state is republican or democrat add the average onto the list blueStatesExpectancy or redStatesExpectancy
         }
-
-        //average all of the values in the blueLifeExpectancy arraylist
-        double sumBlue = 0;
-        for (int i =0; i<blueStatesExpectancy.size(); i++){
-            sumBlue += blueStatesExpectancy.get(i);
-        }
-        double blueAverage = sumBlue/blueStatesExpectancy.size();
-
-        //average all of the values in the redLifeExpectancy arraylist
-        double sumRed = 0;
-        for (int i =0; i<blueStatesExpectancy.size(); i++){
-            sumRed += redStatesExpectancy.get(i);
-        }
-        double redAverage = sumRed/redStatesExpectancy.size();
-
-        System.out.println("The average life expectancy for the republican states is " + redAverage);
-        System.out.println("The average life expectancy for the democratic states is " + blueAverage);
-
-    }
-
-    public static boolean isDem (String state, File blueStatesFile) throws FileNotFoundException{
-        //reading through the blue states file 
-        Scanner blueSC = new Scanner(blueStatesFile);
-        blueSC.nextLine();
-        ArrayList<String> blueStates= new ArrayList<>();
-        while (blueSC.hasNextLine()){
-            //adds state to the arraylist
-            blueStates.add(blueSC.nextLine()); //IS THIS RIGHT 
-        }
-        //is the state is in the list of states thats democrat return true
-        if (blueStates.contains(state)){
-            return true;
-        }
-        //if its not return false 
-        else{
-            return false;
-        }
+        return currMax;
     }
 }
