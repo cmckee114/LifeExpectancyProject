@@ -132,16 +132,6 @@ public class LifeExpectancyProject{
             //adding together all of the data so that i can then average
             double sum= 0;
 
-            System.out.println(line.get(q1FIndex));
-            System.out.println(line.get(q2FIndex));
-            System.out.println(line.get(q3FIndex));
-            System.out.println(line.get(q4FIndex));
-            System.out.println(line.get(q1MIndex));
-            System.out.println(line.get(q2MIndex));
-            System.out.println(line.get(q3MIndex));
-            System.out.println(line.get(q4MIndex));
-
-
             sum+= Double.parseDouble(line.get(q1MIndex));
             sum+= Double.parseDouble(line.get(q1FIndex));
             sum+= Double.parseDouble(line.get(q2MIndex));
@@ -153,9 +143,7 @@ public class LifeExpectancyProject{
             //creating the average with the sum of all of the life expectancies for that state
             double average = sum/8;
 
-            System.out.println("is Dem:" + line.get(stateNameIndex));
             if (isDem(line.get(stateNameIndex), blueStatesFile)){
-                System.out.println("blue");
                 blueStatesExpectancy.add(average);
             }
             else{
@@ -164,12 +152,8 @@ public class LifeExpectancyProject{
             //depending on whether or not this state is republican or democrat add the average onto the list blueStatesExpectancy or redStatesExpectancy
         }
 
-        System.out.println(redStatesExpectancy);
-        System.out.println(blueStatesExpectancy);
-
         //average all of the values in the blueLifeExpectancy arraylist
         double sumBlue = 0;
-        System.out.println(blueStatesExpectancy.size());
         for (int i =0; i<blueStatesExpectancy.size(); i++){
             sumBlue += blueStatesExpectancy.get(i);
         }
@@ -177,7 +161,6 @@ public class LifeExpectancyProject{
 
         //average all of the values in the redLifeExpectancy arraylist
         double sumRed = 0;
-        System.out.println(redStatesExpectancy.size());
         for (int i =0; i<redStatesExpectancy.size(); i++){
             sumRed += redStatesExpectancy.get(i);
         }
@@ -185,12 +168,6 @@ public class LifeExpectancyProject{
 
         System.out.println("The average life expectancy for the republican states is " + redAverage);
         System.out.println("The average life expectancy for the democratic states is " + blueAverage);
-
-        // double summer = (82.611183 + 84.401299 +86.087318 + 87.94558 + 77.372452 + 80.43161 + 82.977402 + 85.785011);
-        // double summer2 = (82.832733 + 84.942505 + 86.583778 + 88.301704 + 77.271698 + 81.050011 + 83.769104 + 86.309631);
-        
-        // double totalSummer = (summer+summer2)/2;
-        // System.out.println(totalSummer/8);
     }
 
     public static boolean isDem (String state, File blueStatesFile) throws FileNotFoundException{
