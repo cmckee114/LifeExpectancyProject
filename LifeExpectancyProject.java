@@ -13,8 +13,8 @@ public class LifeExpectancyProject{
 
         //running the functions to get the answers to my two questions 
         System.out.println(returnWinningParty(lifeExpectancyPathname, pathnameBlue, pathnameRed));
-        System.out.println(incomeQuartileDifference(babyDataPathname));
-        System.out.println(incomeQuartileDifference(lifeExpectancyPathname));
+        //System.out.println(incomeQuartileDifference(babyDataPathname));
+        //System.out.println(incomeQuartileDifference(lifeExpectancyPathname));
     
     }
 
@@ -55,7 +55,7 @@ public class LifeExpectancyProject{
         
         //averagint the life expectancies in the list and putting it into the life expectancy array
         //QUARTILE 1
-        double sumQ1 = 0
+        double sumQ1 = 0;
         for (int i =0; i<Q1.size(); i++){
             sumQ1 += Q1.get(i);
         }
@@ -64,7 +64,7 @@ public class LifeExpectancyProject{
         quartileAverages[0] = averageQ1;
 
         //QUARTILE 2
-        double sumQ2 = 0
+        double sumQ2 = 0;
         for (int i =0; i<Q2.size(); i++){
             sumQ2 += Q2.get(i);
         }
@@ -73,7 +73,7 @@ public class LifeExpectancyProject{
         quartileAverages[1] = averageQ2;
       
         //QUARTILE 3
-        double sumQ3 = 0
+        double sumQ3 = 0;
         for (int i =0; i<Q3.size(); i++){
             sumQ3 += Q3.get(i);
         }
@@ -82,7 +82,7 @@ public class LifeExpectancyProject{
         quartileAverages[2] = averageQ3;
         
         //QUARTILE 4
-        double sumQ4 = 0
+        double sumQ4 = 0;
         for (int i =0; i<Q4.size(); i++){
             sumQ4 += Q4.get(i);
         }
@@ -90,13 +90,13 @@ public class LifeExpectancyProject{
         //adding to the array
         quartileAverages[3] = averageQ4;
 
-
+        indexQuartileMax = indexOf(quartiles.max());
         //everything that i want to be printed out 
         System.out.println("The First Quartile Average Life Expectancy is " + quartiles[0]);
         System.out.println("The Second Quartile Average Life Expectancy is " + quartiles[1]);
         System.out.println("The Third Quartile Average Life Expectancy is " + quartiles[2]);
         System.out.println("The Fourth Quartile Average Life Expectancy is " + quartiles[3]);
-        System.out.println("The winning average life expectancy is " + quartiles.max() " which is Quartile " + (indexOf(quartiles.max())+1) + ".");
+        //System.out.println("The winning average life expectancy is " + quartiles.max() " which is Quartile " + (indexOf(quartiles.max())+1) + ".");
     }
 
 //Assuming all states are either in the redstates data file or the bluestates data file 
