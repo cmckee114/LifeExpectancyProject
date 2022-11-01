@@ -23,9 +23,11 @@ This dataset was created by Raj Chetty, Michael Stepner, Sarah Abraham and their
 ### *Process -->* How did you go about answering your questions? What specific pieces of information did you need from your data set and how did you combine data to arrive at your answer?
 
 This is the link I used to assign states to either the BlueStates dataset or the RedStates dataset which you can edit because I've linked them above! Feel free to change the party affiliation for states and rerun my program to see how the life expectancies change!
+
 [Which States Fall Under Which Party](https://www.governing.com/now/maps-whats-the-real-red-and-blue-balance-of-state-government)
+
 Here is the map I used:
-![Map](USMap.jpg)
+![Map](/cmckee/Desktop/Seminar/Unit1/LifeExpectancyProject/USMap.jpg)
 
 ### *Challenges -->* What difficulties did you run into, and how did you approach solving them?
 
