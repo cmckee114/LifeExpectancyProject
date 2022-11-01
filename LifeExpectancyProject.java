@@ -11,13 +11,9 @@ public class LifeExpectancyProject{
         String lifeExpectancyPathname = "/Users/cmckee/Desktop/Seminar/Unit1/LifeExpectancyProject/LifeExpectancyData.csv";
         String babyDataPathname = "/Users/cmckee/Desktop/Seminar/Unit1/LifeExpectancyProject/BabyData.csv";
 
-        double[] maxTester1 = {7.2,3.0,1.6,4.5};
-        double[] maxTester2 = {2.1,3.4,6.8,3.2};
-        
-        System.out.println(max(maxTester1));
-        System.out.println(max(maxTester2));
         //running the functions to get the answers to my two questions 
         //returnWinningParty(lifeExpectancyPathname, pathnameBlue, pathnameRed);
+        returnWinningParty(lifeExpectancyPathname, pathnameBlue);
         // System.out.println(incomeQuartileDifference(babyDataPathname));
         // System.out.println(incomeQuartileDifference(lifeExpectancyPathname));
     }
@@ -106,85 +102,115 @@ public class LifeExpectancyProject{
 //     }
 
 //Assuming all states are either in the redstates data file or the bluestates data file 
-    // public static void returnWinningParty (String lifeExpectancyPathname, String pathnameBlue, String pathnameRed) throws FileNotFoundException{
-    //     File blueStatesFile = new File(pathnameBlue);
-    //     File redStatesFile = new File(pathnameRed);
-    //     File allStatesFile = new File(lifeExpectancyPathname);
+    public static void returnWinningParty (String lifeExpectancyPathname, String pathnameBlue) throws FileNotFoundException{
+        File blueStatesFile = new File(pathnameBlue);
+        //File allStatesFile = new File(lifeExpectancyPathname);
+        File lifeExpectancyFile = new File(lifeExpectancyPathname);
 
-    //     Scanner sc = new Scanner(allStatesFile);
+        Scanner sc = new Scanner(lifeExpectancyFile);
         
-    //     ArrayList<Double> blueStatesExpectancy = new ArrayList<Double>();
-    //     ArrayList<Double> redStatesExpectancy = new ArrayList<Double>();
+        ArrayList<Double> blueStatesExpectancy = new ArrayList<Double>();
+        ArrayList<Double> redStatesExpectancy = new ArrayList<Double>();
 
-    //     String[] headerArr = sc.nextLine().split(",");
-    //     ArrayList<String> header = new ArrayList<>(Arrays.asList(headerArr));
+        String[] headerArr = sc.nextLine().split(",");
+        ArrayList<String> header = new ArrayList<>(Arrays.asList(headerArr));
         
-    //     int stateNameIndex = header.indexOf("statename");
-    //     int q1MIndex = header.indexOf("le_agg_q1_M");
-    //     int q1FIndex = header.indexOf("le_agg_q1_F");
-    //     int q2MIndex = header.indexOf("le_agg_q2_M");
-    //     int q2FIndex = header.indexOf("le_agg_q2_F");
-    //     int q3MIndex = header.indexOf("le_agg_q3_M");
-    //     int q3FIndex = header.indexOf("le_agg_q3_F");
-    //     int q4MIndex = header.indexOf("le_agg_q4_M");
-    //     int q4FIndex = header.indexOf("le_agg_q4_F");
+        int stateNameIndex = header.indexOf("statename");
+        int q1MIndex = header.indexOf("le_agg_q1_M");
+        int q1FIndex = header.indexOf("le_agg_q1_F");
+        int q2MIndex = header.indexOf("le_agg_q2_M");
+        int q2FIndex = header.indexOf("le_agg_q2_F");
+        int q3MIndex = header.indexOf("le_agg_q3_M");
+        int q3FIndex = header.indexOf("le_agg_q3_F");
+        int q4MIndex = header.indexOf("le_agg_q4_M");
+        int q4FIndex = header.indexOf("le_agg_q4_F");
 
-    //     while (sc.hasNextLine()){
-    //         //taking the current line and splitting it and putting it into an arraylist
-    //         ArrayList<String> line = new ArrayList<>(Arrays.asList(sc.nextLine().split(",")));
+        while (sc.hasNextLine()){
+            //taking the current line and splitting it and putting it into an arraylist
+            ArrayList<String> line = new ArrayList<>(Arrays.asList(sc.nextLine().split(",")));
             
-    //         //adding together all of the data so that i can then average
-    //         double sum= 0;
-    //         sum+= Double.parseDouble(line.get(q1MIndex))+ Double.parseDouble(line.get(q1FIndex))+ Double.parseDouble(line.get(q2MIndex))+ Double.parseDouble(line.get(q2FIndex))+ Double.parseDouble(line.get(q3MIndex))+ Double.parseDouble(line.get(q3FIndex))+ Double.parseDouble(line.get(q4MIndex))+ Double.parseDouble(line.get(q4FIndex));
-    //         //creating the average with the sum of all of the life expectancies for that state
-    //         double average = sum/8;
+            //adding together all of the data so that i can then average
+            double sum= 0;
 
-    //         if (isDem(line.get(stateNameIndex), blueStatesFile)==true){
-    //             blueStatesExpectancy.add(average);
-    //         }
-    //         else{
-    //             redStatesExpectancy.add(average);
-    //         }
-    //         //depending on whether or not this state is republican or democrat add the average onto the list blueStatesExpectancy or redStatesExpectancy
-    //     }
+            System.out.println(line.get(q1FIndex));
+            System.out.println(line.get(q2FIndex));
+            System.out.println(line.get(q3FIndex));
+            System.out.println(line.get(q4FIndex));
+            System.out.println(line.get(q1MIndex));
+            System.out.println(line.get(q2MIndex));
+            System.out.println(line.get(q3MIndex));
+            System.out.println(line.get(q4MIndex));
 
-    //     //average all of the values in the blueLifeExpectancy arraylist
-    //     double sumBlue = 0;
-    //     for (int i =0; i<blueStatesExpectancy.size(); i++){
-    //         sumBlue += blueStatesExpectancy.get(i);
-    //     }
-    //     double blueAverage = sumBlue/blueStatesExpectancy.size();
 
-    //     //average all of the values in the redLifeExpectancy arraylist
-    //     double sumRed = 0;
-    //     for (int i =0; i<blueStatesExpectancy.size(); i++){
-    //         sumRed += redStatesExpectancy.get(i);
-    //     }
-    //     double redAverage = sumRed/redStatesExpectancy.size();
+            sum+= Double.parseDouble(line.get(q1MIndex));
+            sum+= Double.parseDouble(line.get(q1FIndex));
+            sum+= Double.parseDouble(line.get(q2MIndex));
+            sum+= Double.parseDouble(line.get(q2FIndex));
+            sum+= Double.parseDouble(line.get(q3MIndex));
+            sum+= Double.parseDouble(line.get(q3FIndex));
+            sum+= Double.parseDouble(line.get(q4MIndex));
+            sum+= Double.parseDouble(line.get(q4FIndex));
+            //creating the average with the sum of all of the life expectancies for that state
+            double average = sum/8;
 
-    //     System.out.println("The average life expectancy for the republican states is " + redAverage);
-    //     System.out.println("The average life expectancy for the democratic states is " + blueAverage);
+            System.out.println("is Dem:" + line.get(stateNameIndex));
+            if (isDem(line.get(stateNameIndex), blueStatesFile)){
+                System.out.println("blue");
+                blueStatesExpectancy.add(average);
+            }
+            else{
+                redStatesExpectancy.add(average);
+            }
+            //depending on whether or not this state is republican or democrat add the average onto the list blueStatesExpectancy or redStatesExpectancy
+        }
 
-    // }
+        System.out.println(redStatesExpectancy);
+        System.out.println(blueStatesExpectancy);
 
-    // public static boolean isDem (String state, File blueStatesFile) throws FileNotFoundException{
-    //     //reading through the blue states file 
-    //     Scanner blueSC = new Scanner(blueStatesFile);
-    //     blueSC.nextLine();
-    //     ArrayList<String> blueStates= new ArrayList<>();
-    //     while (blueSC.hasNextLine()){
-    //         //adds state to the arraylist
-    //         blueStates.add(blueSC.nextLine()); //IS THIS RIGHT 
-    //     }
-    //     //is the state is in the list of states thats democrat return true
-    //     if (blueStates.contains(state)){
-    //         return true;
-    //     }
-    //     //if its not return false 
-    //     else{
-    //         return false;
-    //     }
-    // }
+        //average all of the values in the blueLifeExpectancy arraylist
+        double sumBlue = 0;
+        System.out.println(blueStatesExpectancy.size());
+        for (int i =0; i<blueStatesExpectancy.size(); i++){
+            sumBlue += blueStatesExpectancy.get(i);
+        }
+        double blueAverage = sumBlue/blueStatesExpectancy.size();
+
+        //average all of the values in the redLifeExpectancy arraylist
+        double sumRed = 0;
+        System.out.println(redStatesExpectancy.size());
+        for (int i =0; i<redStatesExpectancy.size(); i++){
+            sumRed += redStatesExpectancy.get(i);
+        }
+        double redAverage = sumRed/redStatesExpectancy.size();
+
+        System.out.println("The average life expectancy for the republican states is " + redAverage);
+        System.out.println("The average life expectancy for the democratic states is " + blueAverage);
+
+        // double summer = (82.611183 + 84.401299 +86.087318 + 87.94558 + 77.372452 + 80.43161 + 82.977402 + 85.785011);
+        // double summer2 = (82.832733 + 84.942505 + 86.583778 + 88.301704 + 77.271698 + 81.050011 + 83.769104 + 86.309631);
+        
+        // double totalSummer = (summer+summer2)/2;
+        // System.out.println(totalSummer/8);
+    }
+
+    public static boolean isDem (String state, File blueStatesFile) throws FileNotFoundException{
+        //reading through the blue states file 
+        Scanner blueSC = new Scanner(blueStatesFile);
+        blueSC.nextLine();
+        ArrayList<String> blueStates= new ArrayList<>();
+        while (blueSC.hasNextLine()){
+            //adds state to the arraylist
+            blueStates.add(blueSC.nextLine()); //IS THIS RIGHT 
+        }
+        //is the state is in the list of states thats democrat return true
+        if (blueStates.contains(state)){
+            return true;
+        }
+        //if its not return false 
+        else{
+            return false;
+        }
+    }
 
     public static double max (double[] array){
         double currMax = array[0];
