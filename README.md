@@ -27,7 +27,7 @@ This is the link I used to assign states to either the BlueStates dataset or the
 [Which States Fall Under Which Party](https://www.governing.com/now/maps-whats-the-real-red-and-blue-balance-of-state-government)
 
 Here is the map I used:
-![Map](/cmckee/Desktop/Seminar/Unit1/LifeExpectancyProject/USMap.jpg)
+![Map](USMap.jpg)
 
 ### *Challenges -->* What difficulties did you run into, and how did you approach solving them?
 
