@@ -14,7 +14,7 @@ The reason I decided to research the topic of life expectancy is because because
 ## **Methods**
 ---
 
-### *Dataset* How the data was generated, who owns it, and giving credit:
+### *Dataset-->* How the data was generated, who owns it, and giving credit:
 
 This dataset was created by Raj Chetty, Michael Stepner, Sarah Abraham and their other partners at JAMA Network republished by The Health Inequality Project. I have permission to use the dataset owner's dataset with the request that I cite their 2016 JAMA paper which they linked on The Health Inequality Project's website and has been viewed over 200,000 times and cited over 1,000 times. This is because the data was released to a public domain under a CC0 license to "permit the widest possible use." To get the dataset from its source visit this link [Health Inequality Project](https://healthinequality.org/data/). I used the third data file labeled "Satte life expectancy estimates" and edited it slightly just by deleting the first column of the data because I found it to be unneccessary and distracting from the data itself (it labeled the states 1-51 including the District of Columbia) I found by reading the overview topics of their paper that the data was generated in this manner:
  **"Income data for the US population were obtained from 1.4 billion deidentified tax records between 1999 and 2014. Mortality data were obtained from Social Security Administration death records. These data were used to estimate race- and ethnicity-adjusted life expectancy at 40 years of age by household income percentile, sex, and geographic area, and to evaluate factors associated with differences in life expectancy."**
@@ -51,7 +51,7 @@ For the WinningParty method:
 - I then printed the values I got 
 
 
-### *Challenges * 
+### *Challenges* 
 
 I found that most of my challenges came in the form of not knowing what to expect for my results. For a while, I thought my returnWinningParty function was working correctly and it wasn't until I hand tested my babyData that I found an error in my coding. Without having hand calculated the averages for the babyData and realizing that the results were incorrect, I wouldn't have been able to find that my LifeExpectancy dataset results were also incorrect. Also,  before I developed a good checking system by incrementally testing my code I was getting 50-60 errors at a time. Once I started from my helper methods and systematically starting solving erros in my code, the errors began to decline but it took a while before I had this system down. Another error I ran into was making sure I had the correct parameters for each function. Technically, although I created a RedStates dataset, I only use the BlueStates dataset in my current code. This is because I assume that if a state is not on the BlueStates list that it must be on the RedStates list. Ideally, with more time I would not only double check that someone didn't accidentally remove a state from one list and forgets to add it to the other but I would also create a swing states dataset (one that would have the purple states, or states that tend to switch) to test whether or not the difference in life Expectancy is more drastic between red and blue states having removed the swing states. The only reason I did not incorperate this in my current data is because according to the sources I looked up, swing states can be pretty subjective and I didn't want to mess up the data calculations based on my own personal biases. 
 
