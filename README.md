@@ -37,14 +37,18 @@ Here is the map I used:
 
 ### What did the data show? What are your takeaways? Plots might be helpful (though not required) depending on your question. Make sure to also discuss the limitations of your research.
 
+In the test regarding the difference in life expectancy by party (republican states vs democratic states), my hypothesis was correct in that the average life expectancy was higher for democrat leaning states. The results came out to be ~83.161 for democratic states and ~82.96 for republican states. Although these reuslts technically support my hypothesis, because of how minute the difference is, I don't eblieve I can draw a strong correlation to the political status of states being a drastically influential factor in the life expectancy of people living in those states. 
+
+In the test regarding the effect of income quartile on life expectancy, the correlation was much stronger and supported my hypothesis quite well. The first income quartile average life expectancy was ~79.132, the second was ~82.288, the third was ~84.330, and the fourth was ~86.429. Unlike the miniscule difference in life expectancy in the last problem, in this test the difference is quite clear. As income level rises, the life expectancy of people also rises. I may not be able to prove correlatino yet because of the confounding factors present that I may not be accounting for, but seeing this trend was exciting.
 
 
 ### What are some related or additional questions that you would explore if you had more time and resources?
 
 If I had more time and resources I would explore the differences in male and female results and probably also go into more depth by state (i.e. adding a dataset for swing states (ones that often switch between republican and democrat majorities))
 
+The questions I would probably pose might look something like the following:
 If I removed swing states from the data, would the results be more drastic? 
 At what point is the difference in life expectancies by party status correlation?
 
-I would also like to know how my data for income quartile changes if I weight the states based on population size (obviously California is going to have more weight than Kansas because it has many more people in the state)
+I would also like to know how my data for income quartile changes if I weight the states based on population size (obviously California is going to have more weight than Kansas because it has many more people in the state) and there was actually data columns in my LifeExpectancyData file that contained the population of each state (which has probably also changed since the dataset has been uploaded)
 
