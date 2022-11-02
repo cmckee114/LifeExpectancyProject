@@ -15,7 +15,7 @@ public class LifeExpectancyProject{
         //returnWinningParty(lifeExpectancyPathname, pathnameBlue, pathnameRed);
         returnWinningParty(lifeExpectancyPathname, pathnameBlue);
         // System.out.println(incomeQuartileDifference(babyDataPathname));
-        // System.out.println(incomeQuartileDifference(lifeExpectancyPathname));
+        incomeQuartileDifference(lifeExpectancyPathname);
     }
 
     public static void incomeQuartileDifference (String lifeExpectancyPathname) throws FileNotFoundException{
@@ -39,7 +39,6 @@ public class LifeExpectancyProject{
         //setting up the array that will hold my final data with the quartile average life Expectancies inside 
         Double[] quartileAveragesAsArr = {0.0,0.0,0.0,0.0};
         ArrayList<Double> quartileAverages = new ArrayList<>(Arrays.asList(quartileAveragesAsArr));
-        System.out.println(quartileAverages);
 
         //each list holds the average of F and M life expectancy per state for that quartile 
         ArrayList<Double> Q1 = new ArrayList<Double>();
@@ -129,9 +128,8 @@ public class LifeExpectancyProject{
         System.out.println("The Second Quartile Average Life Expectancy is " + quartileAverages.get(1));
         System.out.println("The Third Quartile Average Life Expectancy is " + quartileAverages.get(2));
         System.out.println("The Fourth Quartile Average Life Expectancy is " + quartileAverages.get(3));
-        System.out.println("The winning average life expectancy is " + max(quartileAverages) + " which is Quartile " + (quartileAverages.indexOf(max(quartileAverages)+1)));
-        //is .max() not a statement that i can use?
-        //is indexOf not a function I can use?
+        double maxAverage = max(quartileAverages);
+        System.out.println("The winning average life expectancy is " + max(quartileAverages) + " which is Quartile " + ((quartileAverages.indexOf(maxAverage)+1)));
     }
 
 //Assuming all states are either in the redstates data file or the bluestates data file 
