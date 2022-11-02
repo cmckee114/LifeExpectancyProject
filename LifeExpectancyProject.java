@@ -20,10 +20,12 @@ public class LifeExpectancyProject{
 
     public static void incomeQuartileDifference (String lifeExpectancyPathname) throws FileNotFoundException{
         File lifeExpectancyFile = new File (lifeExpectancyPathname);
-        Scanner scanner = new Scanner(lifeExpectancyFile);
+        Scanner sc = new Scanner(lifeExpectancyFile);
 
         //creating an array for the header of the dataset
-        String[] header = sc.nextLine().split(",");
+        String[] headerArr = sc.nextLine().split(",");
+        ArrayList<String> header= new ArrayList(Arrays.asList(headerArr));
+
         //finding the index of the columns that have the dadta I want to use 
         int quartile1MIndex = header.indexOf("le_agg_q1_M");
         int quartile1FIndex = header.indexOf("le_agg_q1_F");
@@ -35,7 +37,7 @@ public class LifeExpectancyProject{
         int quartile4FIndex = header.indexOf("le_agg_q4_F");
         
         //setting up the array that will hold my final data with the quartile average life Expectancies inside 
-        Double[] quartileAveragesAsArr = {0,0,0,0};
+        Double[] quartileAveragesAsArr = {0.0,0.0,0.0,0.0};
         ArrayList<Double> quartileAverages = new ArrayList<>(Arrays.asList(quartileAveragesAsArr));
         System.out.println(quartileAverages);
 
@@ -51,29 +53,29 @@ public class LifeExpectancyProject{
             //DONT FORGET TO PARSE THE DOUBLES
             double Q1Sum=0;
             double Q1Average =0;
-            Q1Sum += Double.parseDouble(line.get(q1MIndex));
-            Q1Sum += Double.parseDouble(line.get(q1FIndex));
+            Q1Sum += Double.parseDouble(line.get(quartile1MIndex));
+            Q1Sum += Double.parseDouble(line.get(quartile1FIndex));
             Q1Average = Q1Sum/2;
             Q1.add(Q1Average);
 
             double Q2Sum=0;
             double Q2Average = 0;
-            Q2Sum += Double.parseDouble(line.get(q2MIndex));
-            Q2Sum += Double.parseDouble(line.get(q2FIndex));
+            Q2Sum += Double.parseDouble(line.get(quartile2MIndex));
+            Q2Sum += Double.parseDouble(line.get(quartile2FIndex));
             Q2Average = Q2Sum/2;
             Q2.add(Q2Average);
 
             double Q3Sum=0;
             double Q3Average = 0;
-            Q3Sum += Double.parseDouble(line.get(q3MIndex));
-            Q3Sum += Double.parseDouble(line.get(q3FIndex));
+            Q3Sum += Double.parseDouble(line.get(quartile3MIndex));
+            Q3Sum += Double.parseDouble(line.get(quartile3FIndex));
             Q3Average = Q3Sum/2;
             Q3.add(Q3Average);
 
             double Q4Sum=0;
             double Q4Average = 0;
-            Q4Sum += Double.parseDouble(line.get(q4MIndex));
-            Q4Sum += Double.parseDouble(line.get(q4FIndex));
+            Q4Sum += Double.parseDouble(line.get(quartile4MIndex));
+            Q4Sum += Double.parseDouble(line.get(quartile4FIndex));
             Q4Average = Q4Sum/2;
             Q4.add(Q4Average);
 
@@ -92,7 +94,7 @@ public class LifeExpectancyProject{
         }
         double averageQ1 = sumQ1/Q1.size();
         //adding to the array
-        quartileAverages[0] = averageQ1;
+        quartileAverages.set(0,averageQ1);
 
         //QUARTILE 2
         double sumQ2 = 0;
@@ -101,7 +103,7 @@ public class LifeExpectancyProject{
         }
         double averageQ2 = sumQ2/Q2.size();
         //adding to the array
-        quartileAverages[1] = averageQ2;
+        quartileAverages.set(1,averageQ2);
       
         //QUARTILE 3
         double sumQ3 = 0;
@@ -110,7 +112,7 @@ public class LifeExpectancyProject{
         }
         double averageQ3 = sumQ3/Q3.size();
         //adding to the array
-        quartileAverages[2] = averageQ3;
+        quartileAverages.set(2,averageQ3);
         
         //QUARTILE 4
         double sumQ4 = 0;
@@ -119,9 +121,9 @@ public class LifeExpectancyProject{
         }
         double averageQ4 = sumQ4/Q4.size();
         //adding to the array
-        quartileAverages[3] = averageQ4;
+        quartileAverages.set(3,averageQ4);
 
-        indexQuartileMax = quartileAverages.indexOf(max(quartileAverages));
+        double indexQuartileMax = quartileAverages.indexOf(max(quartileAverages));
         //everything that i want to be printed out 
         System.out.println("The First Quartile Average Life Expectancy is " + quartileAverages.get(0));
         System.out.println("The Second Quartile Average Life Expectancy is " + quartileAverages.get(1));
@@ -220,11 +222,11 @@ public class LifeExpectancyProject{
         }
     }
 
-    public static double max (double[] array){
-        double currMax = array[0];
-        for(int i =1; i< array.length; i++){
-            if (array[i]> currMax){
-                currMax = array[i];
+    public static double max (ArrayList<Double> arraylist){
+        Double currMax = arraylist.get(0);
+        for(int i =1; i< arraylist.size(); i++){
+            if (arraylist.get(i)> currMax){
+                currMax = arraylist.get(i);
             }
         }
         return currMax;
