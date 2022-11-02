@@ -65,6 +65,8 @@ In the test regarding the difference in life expectancy by party (republican sta
 
 In the test regarding the effect of income quartile on life expectancy, the correlation was much stronger and supported my hypothesis quite well. The first income quartile average life expectancy was ~79.132, the second was ~82.288, the third was ~84.330, and the fourth was ~86.429. Unlike the miniscule difference in life expectancy in the last problem, in this test the difference is quite clear. As income level rises, the life expectancy of people also rises. I may not be able to prove correlatino yet because of the confounding factors present that I may not be accounting for, but seeing this trend was exciting.
 
+My results are obviously limited because the data in the dataset that I used has probably changed even since its most recent upload. Also, while I'm very excited by the trend shown in my income quartile correlation (as income quartile increases, so does life expectancy), I understand that there are *many* confounding factors that could have affected the life expectancy trend shown. Also, while technically the democrat life expectancy was higher than the republican life expectancy, I understand that because it was such a small difference that the legitimacy of me claiming correlation for this hypothesis is slim to none (particularly because other factors such as regional differences could have been the cause of the difference instead of political affiliation)
+
 
 ### Additional thoughts/questions i'm interested in:
 
