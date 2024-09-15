@@ -1,4 +1,4 @@
-# Exploring Factors Affecting Life Expectancies By State and Gender *Dataset Project*
+# Exploring Factors Affecting Life Expectancies By State and Gender *Dataset*
 
 ---
 ## **Introduction**
